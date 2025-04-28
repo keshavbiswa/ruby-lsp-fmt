@@ -10,7 +10,7 @@ module RubyLsp
       end
 
       def activate(global_state, _message_queue)
-        global_state.register_formatter("my_formatter", RubyfmtFormatter.new)
+        global_state.register_formatter("rubyfmt-lsp", RubyfmtFormatter.new)
       end
 
       def deactivate; end

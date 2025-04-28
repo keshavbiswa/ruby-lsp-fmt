@@ -3,7 +3,7 @@
 require_relative "lib/ruby_lsp/rubyfmt_lsp/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "ruby-lsp-fmt"
+  spec.name = "rubyfmt_lsp"
   spec.version = RubyLsp::RubyfmtLsp::VERSION
   spec.authors = ["Keshav Biswa"]
   spec.email = ["keshavbiswa21@gmail.com"]
