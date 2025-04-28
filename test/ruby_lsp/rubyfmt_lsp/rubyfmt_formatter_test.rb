@@ -31,4 +31,19 @@ class RubyfmtFormatterTest < Minitest::Test
 
     assert_match("rubyfmt error: Error! source: stdin", diagnostics.first.message)
   end
+
+  def test_missing_rubyfmt_binary_returns_diagnostic
+    document = @document_data.new("puts 1+2")
+
+    Open3.stub(:capture3, ->(*args) { raise Errno::ENOENT }) do
+      formatted = @formatter.run_formatting(URI("file:///test.rb"), document)
+
+      assert_equal("puts 1+2", formatted)
+
+      diagnostics = @formatter.run_diagnostic(URI("file:///test.rb"), document)
+
+      refute_empty(diagnostics)
+      assert_match("rubyfmt not found", diagnostics.first.message)
+    end
+  end
 end

@@ -14,14 +14,19 @@ module RubyLsp
       def run_formatting(_uri, document)
         source = document.source
 
-        stdout_str, stderr_str, status = Open3.capture3("rubyfmt", stdin_data: source)
+        begin
+          stdout_str, stderr_str, status = Open3.capture3("rubyfmt", stdin_data: source)
 
-        unless status.success?
-          @last_formatting_error = stderr_str.strip
-          return source
+          unless status.success?
+            @last_formatting_error = stderr_str.strip
+            return source
+          end
+
+          stdout_str
+        rescue Errno::ENOENT
+          @last_formatting_error = "rubyfmt not found. Please install rubyfmt."
+          source
         end
-
-        stdout_str
       end
 
       def run_diagnostic(uri, document)
