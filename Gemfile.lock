@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubyfmt_lsp (0.1.0)
+    ruby-lsp-fmt (0.1.0)
       ruby-lsp (~> 0.23.0)
 
 GEM
@@ -75,7 +75,7 @@ DEPENDENCIES
   minitest (~> 5.16)
   rake (~> 13.0)
   rubocop (~> 1.21)
-  rubyfmt_lsp!
+  ruby-lsp-fmt!
 
 BUNDLED WITH
    2.6.8
