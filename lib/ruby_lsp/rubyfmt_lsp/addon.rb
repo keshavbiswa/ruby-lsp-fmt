@@ -13,7 +13,8 @@ module RubyLsp
         global_state.register_formatter("rubyfmt-lsp", RubyfmtFormatter.new)
       end
 
-      def deactivate; end
+      def deactivate
+      end
 
       def version
         "0.1.0"
