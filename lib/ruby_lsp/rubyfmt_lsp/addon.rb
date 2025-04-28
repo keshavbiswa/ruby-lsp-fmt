@@ -2,6 +2,8 @@
 
 require "ruby_lsp/addon"
 
+require_relative "rubyfmt_formatter.rb"
+
 module RubyLsp
   module RubyfmtLsp
     class Addon < RubyLsp::Addon
