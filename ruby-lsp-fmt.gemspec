@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/ruby/lsp/fmt/version"
+require_relative "lib/ruby_lsp/rubyfmt_lsp/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby-lsp-fmt"
-  spec.version = Ruby::Lsp::Fmt::VERSION
+  spec.version = RubyLsp::RubyfmtLsp::VERSION
   spec.authors = ["Keshav Biswa"]
   spec.email = ["keshavbiswa21@gmail.com"]
 
